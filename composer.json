@@ -1,8 +1,9 @@
 {
 	"name": "weavephp/container-league",
 	"description": "Weave glue-framework League Container adaptor",
-	"type": "package",
-	"version": "0.0.1",
+	"type": "weave-adaptor",
+	"keywords" : ["weave", "container", "adaptor"],
+	"license": "MIT",
 	"authors": [
 		{
 			"name": "Robert Goldsmith",
