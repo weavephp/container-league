@@ -13,9 +13,17 @@
 	"require": {
 		"league/container": "^2.4"
 	},
+	"require-dev": {
+		"squizlabs/php_codesniffer": "^3.0",
+		"weavephp/weave": "^0.0.3"
+	},
 	"autoload": {
 		"psr-4": {
 			"Weave\\Container\\League\\": "src/"
 		}
+	},
+	"scripts": {
+		"phpcs": "php vendor/bin/phpcs",
+		"phan": "docker run -v $PWD:/mnt/src --rm -u \"$(id -u):$(id -g)\" cloudflare/phan:latest -po analysis.txt"
 	}
 }
