@@ -76,8 +76,14 @@ trait League
 		->withArgument(\Weave\Http\ResponseFactoryInterface::class)
 		->withArgument(\Weave\Http\ResponseEmitterInterface::class);
 
-		$this->container->add(\Weave\Middleware\Dispatch::class)
+		$this->container->add(
+			\Weave\Resolve\ResolveAdaptorInterface::class,
+			\Weave\Resolve\Resolve::class
+		)
 		->withArgument('instantiator');
+
+		$this->container->add(\Weave\Middleware\Dispatch::class)
+		->withArgument(\Weave\Resolve\ResolveAdaptorInterface::class);
 
 		$this->container->add(\Weave\Router\Router::class)
 		->withArgument(\Weave\Router\RouterAdaptorInterface::class)
@@ -86,6 +92,6 @@ trait League
 				return $this->provideRouteConfiguration($router);
 			}
 		)
-		->withArgument('instantiator');
+		->withArgument(\Weave\Resolve\ResolveAdaptorInterface::class);
 	}
 }
