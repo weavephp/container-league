@@ -71,7 +71,7 @@ trait League
 				return $this->provideMiddlewarePipeline($pipelineName);
 			}
 		)
-		->withArgument('instantiator')
+		->withArgument(\Weave\Resolve\ResolveAdaptorInterface::class)
 		->withArgument(\Weave\Http\RequestFactoryInterface::class)
 		->withArgument(\Weave\Http\ResponseFactoryInterface::class)
 		->withArgument(\Weave\Http\ResponseEmitterInterface::class);
