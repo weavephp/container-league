@@ -15,15 +15,22 @@
 	},
 	"require-dev": {
 		"squizlabs/php_codesniffer": "^3.0",
-		"weavephp/weave": "^0.0.6"
+		"weavephp/weave": "^0.1",
+		"phpunit/phpunit": "^5.7"
 	},
 	"autoload": {
 		"psr-4": {
 			"Weave\\Container\\League\\": "src/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"Weave\\Container\\League\\": "tests/"
+		}
+	},
 	"scripts": {
 		"phpcs": "php vendor/bin/phpcs",
+		"phpunit": "php vendor/bin/phpunit",
 		"phan": "docker run -v $PWD:/mnt/src --rm -u \"$(id -u):$(id -g)\" cloudflare/phan:latest -po analysis.txt"
 	}
 }
