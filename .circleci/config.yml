@@ -46,7 +46,7 @@ jobs:
 
       - run:
           name: Enable xDebug
-          command: pecl install xdebug && docker-php-ext-enable xdebug
+          command: sudo pecl install xdebug && sudo docker-php-ext-enable xdebug
           when: always
 
       - run:
